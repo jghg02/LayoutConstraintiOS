@@ -32,19 +32,21 @@
 	[self.view addConstraint:[NSLayoutConstraint constraintWithItem:centerView
 														  attribute:NSLayoutAttributeWidth
 														  relatedBy:NSLayoutRelationEqual
-															 toItem:self.view
+															 toItem:nil // si colocamos un View (self.view) aqui va a tomar el valor del Widht y en base al multiplayer va a sacar el			   valor de este. Si lo dejamos en nil se debe colocar una constante que sera el witd del UIView
 														  attribute:NSLayoutAttributeWidth
-														 multiplier:.5
-														   constant:0]];
+														 multiplier:1
+														   constant:110]];
+	
+	
 	
 	// Height constraint
 	[self.view addConstraint:[NSLayoutConstraint constraintWithItem:centerView
 														  attribute:NSLayoutAttributeHeight
 														  relatedBy:NSLayoutRelationEqual
-															 toItem:self.view
+															 toItem:nil
 														  attribute:NSLayoutAttributeHeight
-														 multiplier:.2
-														   constant:0]];
+														 multiplier:1
+														   constant:220]];
 	
 	// Center horizontally
 	[self.view addConstraint:[NSLayoutConstraint constraintWithItem:centerView
