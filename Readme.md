@@ -66,18 +66,18 @@ Desactivamos las restricciones de posición fija.
 	
 Agregamos las restricciones. 
 
-	 NSLayoutConstraint *centerX = [NSLayoutConstraint constraintWithItem:self.view
+	 NSLayoutConstraint *centerX = [NSLayoutConstraint constraintWithItem:centered
                                                                attribute:NSLayoutAttributeCenterX
                                                                relatedBy:NSLayoutRelationEqual
-                                                                  toItem:centered
+                                                                  toItem:self.view
                                                                attribute:NSLayoutAttributeCenterX
                                                               multiplier:1
                                                                 constant:0];
                                                                 
-	NSLayoutConstraint *centerY = [NSLayoutConstraint constraintWithItem:self.view
+	NSLayoutConstraint *centerY = [NSLayoutConstraint constraintWithItem:centered
                                                                attribute:NSLayoutAttributeCenterY
                                                                relatedBy:NSLayoutRelationEqual
-                                                                  toItem:centered
+                                                                  toItem:self.view
                                                                attribute:NSLayoutAttributeCenterY
                                                               multiplier:1
                                                                 constant:0];
