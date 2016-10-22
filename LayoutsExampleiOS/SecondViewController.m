@@ -7,6 +7,7 @@
 //
 
 #import "SecondViewController.h"
+#import "VistaiOS.h"
 
 @interface SecondViewController ()
 
@@ -17,6 +18,39 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+	
+	VistaiOS *firstView = [[VistaiOS alloc] initWithFrame:CGRectMake(0, 0, 10, 10)];
+	VistaiOS *secondView = [[VistaiOS alloc] initWithFrame:CGRectMake(0, 0, 10, 10)];
+	
+	[firstView setBackgroundColor:[UIColor yellowColor]];
+	[secondView setBackgroundColor:[UIColor blueColor]];
+	
+	[self.view addSubview:firstView];
+	[self.view addSubview:secondView];
+	
+	firstView.translatesAutoresizingMaskIntoConstraints = NO;
+	secondView.translatesAutoresizingMaskIntoConstraints = NO;
+	
+	//lo primero es crear un diccionario con la referencia a las vistas.
+	NSDictionary *dictionary = @{@"firstView":firstView};
+	
+	//Creamos dos constraints para el Widht y el Height del View
+	NSArray *widthFirstView = [NSLayoutConstraint constraintsWithVisualFormat:@"H:[firstView(100)]"
+																					  options:0
+																				      metrics:nil
+																				        views:dictionary];
+	
+	NSArray *hightFirstView = [NSLayoutConstraint constraintsWithVisualFormat:@"V:[firstView(100)]"
+																				 options:0
+																				 metrics:nil
+																				   views:dictionary];
+	//Colocar secondview 30 pixeles de la firstView
+	//NSArray *otherConstraint = [NSLayoutConstraint constraintsWithVisualFormat:@"V:|-10-[firstView]" options:0 metrics:nil views:dictionary];
+	
+	[firstView addConstraints:widthFirstView];
+	[firstView addConstraints:hightFirstView];
+	//[firstView addConstraints:otherConstraint];
+	
 }
 
 - (void)didReceiveMemoryWarning {
