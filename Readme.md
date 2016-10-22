@@ -95,6 +95,51 @@ Documentación.
 ![](http://matthewmorey.com/creating-uiviews-programmatically-with-auto-layout/)
 
 
+#Visual Format Language - VLF
+
+Lenguaje que nos permite definier los constraint de los elementos de nuestra interfaz. 
+
+Ejemplo.
+Para definir que un _view_ debe tener un **width de 200** pixeles:
+
+	"H:[view(200)]"
+	
+La primera letra en **Mayuscula** nos sirve para definir la **dimension** que queremos modificar
+
+- **H** : _Eje Horizontal_
+- **V** : _Eje Vertical_
+
+Luego especificamos el elemento al que queremos añadir nuestra constraint. Que en este caso es **View**
+
+Y por ultimo especificamos **el valor de la constraint** 
+
+Cuando queremos definir una nueva **constraint** con **VLF** usaremos el metodo
+
+	constraintsWithVisualFormat:options:metrics:views
+	
+Cuando queramos añadir una **constraint** a una view, usaremos el método **addConstraints:**
+
+Cuando queramos eliminar una **constraint** de una view, usaremos el método **removeConstraints:**
+
+
+#translatesAutoresizingMaskIntoConstraints
+
+Cuando creamos alguna **view** mediante **código**. Se debe aregar esta propiedad con el valor **NO** 
+
+	self.view.translatesAutoresizingMaskIntoConstraints = NO;
+	
+Esto se debe hacer ya que al crear un **UIView** crea automaticamente las constraints. Dichas constraints creadas automaticamente pueden entrar en **conflicto** con las que creemos. Por eso se debe asignar a **NO** dicha propiedad. 
+
+
+Es muy importante que al momento de usar **VLF** debemos de crear un **NSDictionary** que asocie la vista a un key que se usara para definir los constraints. 
+
+	NSDictionary *dictionary = @{@"firstView":firstView};
+	
+
+
+	
+
+	
 
 
 
