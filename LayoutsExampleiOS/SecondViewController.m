@@ -20,41 +20,45 @@
 	// Do any additional setup after loading the view.
 	
 	self.title = @"VLF";
-	
-	
-	
-	VistaiOS *firstView = [[VistaiOS alloc] initWithFrame:CGRectMake(20, self.navigationController.navigationBar.frame.size.height + 30, 10, 10)];
+
+	VistaiOS *firstView = [[VistaiOS alloc] initWithFrame:CGRectMake(0, self.navigationController.navigationBar.frame.size.height + 30, 10, 10)];
 	VistaiOS *secondView = [[VistaiOS alloc] initWithFrame:CGRectMake(10, self.navigationController.navigationBar.frame.size.height + 30, 10, 10)];
 	
 	[firstView setBackgroundColor:[UIColor yellowColor]];
 	[secondView setBackgroundColor:[UIColor blueColor]];
 	
+	[firstView setTranslatesAutoresizingMaskIntoConstraints:NO];
+	[secondView setTranslatesAutoresizingMaskIntoConstraints:NO];
+	
 	[self.view addSubview:firstView];
 	[self.view addSubview:secondView];
 	
-	firstView.translatesAutoresizingMaskIntoConstraints = NO;
-	secondView.translatesAutoresizingMaskIntoConstraints = NO;
+	NSDictionary* viewsDictionary = @{@"redView":firstView};
 	
-	//lo primero es crear un diccionario con la referencia a las vistas.
-	NSDictionary<NSString *, UIView *> *dictionary = @{@"firstView":firstView,@"secondView":secondView};
+	NSArray *constraint_width = [NSLayoutConstraint constraintsWithVisualFormat:@"H:[redView(100)]"
+																		options:0
+																		metrics:nil
+																		  views:viewsDictionary];
 	
-	//Creamos dos constraints para el Widht y el Height del View
-	NSArray *widthFirstView = [NSLayoutConstraint constraintsWithVisualFormat:@"H:[firstView(50)]"
-																	  options:0
-																	  metrics:nil
-																		views:dictionary];
+	NSArray *constraint_height = [NSLayoutConstraint constraintsWithVisualFormat:@"V:[redView(100)]"
+																		 options:0
+																		 metrics:nil
+																		   views:viewsDictionary];
 	
-	NSArray *hightFirstView = [NSLayoutConstraint constraintsWithVisualFormat:@"V:[firstView(50)]"
-																	  options:0
-																	  metrics:nil
-																		views:dictionary];
-	//Colocar secondview 30 pixeles de la firstView
-	NSArray *otherConstraint = [NSLayoutConstraint constraintsWithVisualFormat:@"V:|-30-[firstView]" options:0 metrics:nil views:dictionary];
+	[firstView addConstraints:constraint_width];
+	[firstView addConstraints:constraint_height];
 	
-	[firstView addConstraints:widthFirstView];
-	[firstView addConstraints:hightFirstView];
+	NSArray *constraint_pos_v = [NSLayoutConstraint constraintsWithVisualFormat:@"V:|-300-[redView]"
+																		options:0
+																		metrics:nil
+																		  views:viewsDictionary];
 	
-	
+	NSArray *constraint_pos_h = [NSLayoutConstraint constraintsWithVisualFormat:@"H:|-20-[redView]"
+																		options:0
+																		metrics:nil
+																		  views:viewsDictionary];
+	[self.view addConstraints:constraint_pos_v];
+	[self.view addConstraints:constraint_pos_h];
 	
 }
 
