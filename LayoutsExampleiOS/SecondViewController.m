@@ -30,17 +30,18 @@
 	[firstView setTranslatesAutoresizingMaskIntoConstraints:NO];
 	[secondView setTranslatesAutoresizingMaskIntoConstraints:NO];
 	
-	[self.view addSubview:firstView];
 	[self.view addSubview:secondView];
+	[self.view addSubview:firstView];
 	
-	NSDictionary* viewsDictionary = @{@"redView":firstView};
 	
-	NSArray *constraint_width = [NSLayoutConstraint constraintsWithVisualFormat:@"H:[redView(100)]"
+	NSDictionary<NSString *, UIView *> *viewsDictionary = @{@"firstView":firstView,@"secondView":secondView};
+	
+	NSArray *constraint_width = [NSLayoutConstraint constraintsWithVisualFormat:@"H:[firstView(100)]"
 																		options:0
 																		metrics:nil
 																		  views:viewsDictionary];
 	
-	NSArray *constraint_height = [NSLayoutConstraint constraintsWithVisualFormat:@"V:[redView(100)]"
+	NSArray *constraint_height = [NSLayoutConstraint constraintsWithVisualFormat:@"V:[firstView(100)]"
 																		 options:0
 																		 metrics:nil
 																		   views:viewsDictionary];
@@ -48,17 +49,33 @@
 	[firstView addConstraints:constraint_width];
 	[firstView addConstraints:constraint_height];
 	
-	NSArray *constraint_pos_v = [NSLayoutConstraint constraintsWithVisualFormat:@"V:|-300-[redView]"
+	NSArray *constraint_pos_v = [NSLayoutConstraint constraintsWithVisualFormat:@"V:|-300-[firstView]"
 																		options:0
 																		metrics:nil
 																		  views:viewsDictionary];
 	
-	NSArray *constraint_pos_h = [NSLayoutConstraint constraintsWithVisualFormat:@"H:|-20-[redView]"
+	NSArray *constraint_pos_h = [NSLayoutConstraint constraintsWithVisualFormat:@"H:|-20-[firstView]"
 																		options:0
 																		metrics:nil
 																		  views:viewsDictionary];
+	
 	[self.view addConstraints:constraint_pos_v];
 	[self.view addConstraints:constraint_pos_h];
+	
+	//Second View Contratints
+	NSArray *height = [NSLayoutConstraint constraintsWithVisualFormat:@"H:|[secondView]|"
+															   options:0
+															   metrics:nil
+																 views:viewsDictionary];
+	
+	NSArray *width = [NSLayoutConstraint constraintsWithVisualFormat:@"V:|[secondView]|"
+															   options:0
+															   metrics:nil
+																 views:viewsDictionary];
+	
+	[self.view addConstraints:height];
+	[self.view addConstraints:width];
+	
 	
 }
 
