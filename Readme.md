@@ -139,6 +139,8 @@ Es muy importante que al momento de usar **VLF** debemos de crear un **NSDiction
 
 
 
+
+
 Documentacion http://www.efectoapple.com/domina-auto-layout-como-experto-parte1/
 
 	
