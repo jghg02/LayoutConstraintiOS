@@ -7,11 +7,3 @@ language: objective-c
 osx_image: xcode7.3
 xcode_project: LayoutsExampleiOS.xcodeproj # path to your xcodeproj folder
 xcode_scheme: LayoutsExampleiOSTests
-
-before_install:
-  - brew update > /dev/null
-  - brew install uncrustify
-  - gem install xcpretty --no-document
-  - gem install coveralls --no-document
-  - gem install slather --no-document
-  - pod repo update --silent
