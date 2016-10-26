@@ -1,3 +1,6 @@
+[![Travis](https://secure.travis-ci.org/jghg02/PROYECO_GITHUB.png)](http://travis-ci.org/jghg02/LayoutConstraintiOS)
+
+
 #Tamaños por defecto. 
 
 Toda **UIView** tine una **propiedad** llamada **intrinsicContentSize** que retorna un **CGRect** con el tamñana por defecto que posee esta _vista_. En general este tamaño viene dado por su _contenido_ 
