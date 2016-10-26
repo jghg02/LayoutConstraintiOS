@@ -1,7 +1,7 @@
 
 |   | `master` | 
 |:--|:---------|
-| **Travis** | [![Build Status of master branch](https://travis-ci.com/jghg02/LayoutsExampleiOS.svg?branch=master)](https://travis-ci.org/jghg02/LayoutConstraintiOS) |
+| **Travis** | [![Build Status](https://travis-ci.org/jghg02/LayoutConstraintiOS.svg?branch=master)](https://travis-ci.org/jghg02/LayoutConstraintiOS) |
 
 
 #Tamaños por defecto. 
