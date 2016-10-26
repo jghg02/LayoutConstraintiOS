@@ -1,4 +1,7 @@
-[![Travis](https://secure.travis-ci.org/jghg02/PROYECO_GITHUB.png)](http://travis-ci.org/jghg02/LayoutConstraintiOS)
+
+|   | `master` | 
+|:--|:---------|
+| **Travis** | [![Build Status of master branch](https://travis-ci.com/jghg02/LayoutsExampleiOS.svg?branch=master)](https://travis-ci.com/jghg02/LayoutsExampleiOS) |
 
 
 #Tamaños por defecto. 
